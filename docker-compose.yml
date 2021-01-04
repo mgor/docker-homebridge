@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+   server:
+      hostname: homebridge
+      image: homebridge:latest
+      restart: always
+      network_mode: host
+      ports:
+         - target: 51826
+           published: 51826
+           protocol: tcp
+           mode: host
+      volumes:
+         - type: bind
+           source: $PWD/data
+           target: /opt/homebridge/data
+
