@@ -12,7 +12,8 @@ RUN apk add --no-cache --virtual .build-deps \
 
 RUN apk add --no-cache \
     nodejs \
-    npm
+    npm \
+    tzdata
 
 RUN npm install -g --unsafe-perm \
     homebridge \
